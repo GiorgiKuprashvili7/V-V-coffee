@@ -109,12 +109,16 @@
   }
   .nav {
     grid-column: 1 / -1;
-    padding: 5px;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+
     ul {
       flex-wrap: wrap;
       align-items: center;
+      justify-content: end;
       row-gap: 5px;
-      column-gap: 10px;
+      column-gap: 15px;
 
       li {
         a {
@@ -125,9 +129,13 @@
     }
   }
   .location {
+    justify-content: center;
     padding: 5px;
+    p {
+      font-size: 12px;
+    }
     .pin {
-      margin: 0 10px 0 5px;
+      margin: 0 5px;
       width: 30px;
     }
   }
