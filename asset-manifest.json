@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/V-V-coffee/static/css/main.fc50d320.css",
+    "main.css": "/V-V-coffee/static/css/main.db7e3523.css",
     "main.js": "/V-V-coffee/static/js/main.ae956423.js",
     "static/media/coffee5.png": "/V-V-coffee/static/media/coffee5.482a8553616102cfb165.png",
     "static/media/45years.png": "/V-V-coffee/static/media/45years.0d78db2b39409b3bfa2e.png",
     "index.html": "/V-V-coffee/index.html",
-    "main.fc50d320.css.map": "/V-V-coffee/static/css/main.fc50d320.css.map",
+    "main.db7e3523.css.map": "/V-V-coffee/static/css/main.db7e3523.css.map",
     "main.ae956423.js.map": "/V-V-coffee/static/js/main.ae956423.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc50d320.css",
+    "static/css/main.db7e3523.css",
     "static/js/main.ae956423.js"
   ]
 }
