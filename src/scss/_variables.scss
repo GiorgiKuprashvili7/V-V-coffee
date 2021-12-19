@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+$mainfont: 'Open Sans', sans-serif;
+$logoFont: 'Dancing Script', cursive;
+
+$white: rgb(255, 255, 255);
+$borderColor: rgb(167, 165, 165);
+$primaryColor: rgb(47, 46, 51);
+$accentColor: #be5650;
+
+@mixin content-max-width {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin side-paddings {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+$tablet-brakpoint: 1024px;
+$mobile-landscape-breakpoint: 768px;

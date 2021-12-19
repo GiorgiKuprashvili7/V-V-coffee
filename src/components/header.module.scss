@@ -1,0 +1,134 @@
+@use '../scss/variables' as *;
+
+.header {
+  @include side-paddings;
+  padding-top: 50px;
+}
+
+.content {
+  @include content-max-width;
+  background-color: $borderColor;
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
+  grid-template-rows: 50px 50px;
+  gap: 1px;
+  padding: 0px 1px 1px 1px;
+}
+
+.content > * {
+  cursor: default;
+  background-color: $primaryColor;
+  color: $white;
+}
+
+.logo {
+  cursor: pointer;
+  font-size: 40px;
+  font-family: $logoFont;
+  grid-row: 1/-1;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.location {
+  transition-duration: 100ms;
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: $mainfont;
+    font-size: 12px;
+  }
+  .pin {
+    margin: 0 15px 0 10px;
+  }
+  &:hover {
+    p,
+    .pin {
+      color: $accentColor;
+    }
+  }
+}
+
+.socialIcons {
+  transition-duration: 100ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  .icon {
+    cursor: pointer;
+    &:hover {
+      color: $accentColor;
+    }
+  }
+}
+
+.nav {
+  grid-column: 2 / -1;
+  ul {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+    li {
+      a {
+        text-transform: uppercase;
+        padding: 5px 0;
+        transition-duration: 100ms;
+        font-family: $mainfont;
+        text-decoration: none;
+        color: $borderColor;
+        font-weight: 600;
+        &:hover {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-landscape-breakpoint) {
+  .content {
+    grid-template-columns: 80px 1fr 110px;
+    grid-template-rows: 50px auto;
+  }
+  .header {
+    padding-top: 15px;
+  }
+  .logo {
+    font-size: 25px;
+    grid-row: 1/2;
+  }
+  .nav {
+    grid-column: 1 / -1;
+    padding: 5px;
+    ul {
+      flex-wrap: wrap;
+      align-items: center;
+      row-gap: 5px;
+      column-gap: 10px;
+
+      li {
+        a {
+          font-size: 14px;
+          padding: 0;
+        }
+      }
+    }
+  }
+  .location {
+    padding: 5px;
+    .pin {
+      margin: 0 10px 0 5px;
+      width: 30px;
+    }
+  }
+}

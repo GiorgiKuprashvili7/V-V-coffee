@@ -1,0 +1,116 @@
+@use '../scss/variables' as *;
+.section {
+  @include side-paddings;
+}
+
+.scrollDown {
+  font-size: 20px;
+  color: $white;
+  padding: 5px 0;
+  border-left: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+  text-align: center;
+  position: relative;
+  bottom: -15px;
+  background-color: $primaryColor;
+  z-index: 2;
+  width: 150px;
+  margin: 0 auto;
+  font-family: $mainfont;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.content {
+  @include content-max-width;
+  position: relative;
+  background-color: $borderColor;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1px;
+  padding: 1px 0;
+}
+.content > * {
+  padding-top: 20px;
+  background-color: $primaryColor;
+}
+
+.imageContainer {
+  grid-row: 1/3;
+  display: grid;
+  place-items: center;
+  img {
+    width: 60%;
+    padding-bottom: 40px;
+    filter: drop-shadow(15px 5px 5px rgba(0, 0, 0, 0.4));
+  }
+}
+.textContainer {
+  grid-row: 1/3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  font-family: $mainfont;
+  h1 {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-top: 30px;
+    margin-bottom: 15px;
+  }
+  .line {
+    height: 2px;
+    width: 30px;
+    background-color: $white;
+    margin-bottom: 30px;
+  }
+  p {
+    color: $borderColor;
+    line-height: 160%;
+    max-width: 60ch;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+}
+.yearsContainer {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.iconsContainer {
+  padding-top: 0;
+  color: $white;
+  font-size: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (max-width: $tablet-brakpoint) {
+  .content {
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+  }
+  .iconsContainer {
+    font-size: 60px;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+@media screen and (max-width: $mobile-landscape-breakpoint) {
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .iconsContainer {
+    padding: 30px 0;
+    justify-content: space-around;
+  }
+  .imageContainer {
+    display: none;
+  }
+}
