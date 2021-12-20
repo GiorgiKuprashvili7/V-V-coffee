@@ -1,0 +1,236 @@
+@use '../scss/variables' as *;
+.section {
+  @include side-paddings;
+}
+
+.content {
+  @include content-max-width;
+  background-color: $borderColor;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  padding: 1px 0;
+}
+.content > * {
+  background-color: $primaryColor;
+}
+.sliderContainer {
+  padding: 30px;
+  overflow: hidden;
+  grid-column: 1/3;
+  grid-row: 1/4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: $white;
+    font-size: 30px;
+    font-family: $mainfont;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .line {
+    height: 3px;
+    width: 30px;
+    background-color: $white;
+    margin-bottom: 30px;
+  }
+
+  .slider {
+    width: 80%;
+    .sliderItem {
+      outline: none;
+      img {
+        width: 100%;
+        max-height: 540px;
+        object-fit: contain;
+        margin-bottom: 40px;
+        filter: drop-shadow(10px 0px 5px rgba(0, 0, 0, 0.2));
+      }
+      p {
+        text-transform: capitalize;
+        font-family: $mainfont;
+        color: $white;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        a {
+          font-family: $mainfont;
+          color: $white;
+          text-decoration: none;
+          text-align: center;
+          padding: 5px;
+          border-bottom: 1px solid $accentColor;
+        }
+      }
+    }
+  }
+}
+.arrownext,
+.arrowprev {
+  font-size: 50px;
+  color: $borderColor;
+  top: calc(50% - 50px);
+  cursor: pointer;
+}
+.arrownext {
+  position: absolute;
+  right: -50px;
+}
+.arrowprev {
+  position: absolute;
+  left: 0;
+  left: -50px;
+}
+.textContainer {
+  padding: 50px;
+  grid-row: 3/4;
+  grid-column: 3/5;
+  color: $white;
+  font-family: $mainfont;
+  h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  .line {
+    width: 20px;
+    height: 3px;
+    background-color: $white;
+    margin-bottom: 30px;
+  }
+  p {
+    line-height: 170%;
+    max-width: 60ch;
+  }
+}
+
+.guarantyContainer {
+  padding: 50px;
+  grid-row: 2/3;
+  display: grid;
+  place-items: center;
+  img {
+    max-width: 230px;
+  }
+}
+.mapContainer {
+  grid-row: 1/3;
+  grid-column: 4/ 5;
+  img {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
+.decorContainer {
+  padding: 30px 50px;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: $mainfont;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  gap: 10px;
+  font-size: 25px;
+  h3 {
+    color: $white;
+    font-weight: 600;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: $white;
+    min-width: 230px;
+    clip-path: polygon(85% 0, 95% 50%, 85% 100%, 0% 100%, 10% 51%, 0% 0%);
+    h2 {
+      font-weight: 800;
+      color: $primaryColor;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.mapContainer {
+  display: grid;
+  place-items: center;
+}
+@media screen and (max-width: $tablet-brakpoint) {
+  .content {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .sliderContainer {
+    grid-column: 1/4;
+    grid-row: 1/3;
+  }
+  .textContainer {
+    grid-column: 4/7;
+    grid-row: 1/2;
+  }
+  .decorContainer {
+    grid-column: 4/7;
+    grid-row: 2/3;
+  }
+  .guarantyContainer {
+    grid-column: 1/4;
+    grid-row: 3/4;
+  }
+  .mapContainer {
+    grid-row: 3/4;
+    grid-column: 4/7;
+  }
+}
+@media screen and (max-width: $mobile-landscape-breakpoint) {
+  .content {
+    grid-template-columns: 2fr;
+  }
+  .sliderContainer {
+    padding: 20px;
+    grid-column: 1/3;
+    grid-row: auto;
+  }
+  .textContainer {
+    padding: 20px;
+    grid-column: 1/3;
+    grid-row: auto;
+  }
+  .decorContainer {
+    padding: 20px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    gap: 5px;
+    h3 {
+      font-size: 25px;
+    }
+    div {
+      min-width: 150px;
+      h2 {
+        font-size: 25px;
+      }
+    }
+  }
+  .guarantyContainer {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding: 20px;
+    img {
+      min-width: none;
+      width: 100%;
+    }
+  }
+  .mapContainer {
+    display: none;
+  }
+}

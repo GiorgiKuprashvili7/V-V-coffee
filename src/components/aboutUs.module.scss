@@ -110,6 +110,12 @@
     padding: 30px 0;
     justify-content: space-around;
   }
+  .yearsContainer {
+    img {
+      min-width: 220px;
+      width: 30%;
+    }
+  }
   .imageContainer {
     display: none;
   }

@@ -1,0 +1,105 @@
+@use '../scss/variables' as *;
+
+.section {
+  @include side-paddings;
+}
+.content {
+  @include content-max-width;
+  background-color: $borderColor;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  padding: 1px 0;
+}
+
+.content > * {
+  background-color: $primaryColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  font-family: $mainfont;
+}
+
+.img1Container {
+  grid-column: 1/3;
+  padding: 30px;
+  img {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+.img2Container {
+  grid-column: 5/8;
+  padding: 30px;
+  img {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+.textContainer {
+  grid-column: 3/5;
+  padding: 30px;
+  h1 {
+    height: 60px;
+    grid-column: 1/4;
+    align-items: flex-start;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 32px;
+  }
+  .line {
+    margin-bottom: 20px;
+    height: 3px;
+    width: 30px;
+    background-color: $white;
+  }
+  p {
+    text-align: center;
+    max-width: 40ch;
+    color: $borderColor;
+    line-height: 160%;
+  }
+}
+.h1 {
+  cursor: default;
+  height: 60px;
+  grid-column: 1/4;
+  align-items: flex-start;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.h4 {
+  cursor: default;
+  font-weight: 600;
+  height: 60px;
+  grid-column: 4/8;
+  align-items: flex-end;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: $tablet-brakpoint) {
+  .textContainer {
+    h1 {
+      font-size: 23px;
+    }
+  }
+  .h1 {
+    font-size: 20px;
+  }
+  .h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: $mobile-landscape-breakpoint) {
+  .textContainer {
+    grid-column: 1/8;
+  }
+  .img1Container {
+    display: none;
+  }
+  .img2Container {
+    display: none;
+  }
+}

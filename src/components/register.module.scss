@@ -1,0 +1,85 @@
+@use '../scss/variables' as *;
+
+.section {
+  @include side-paddings;
+}
+
+.content {
+  padding: 50px 0;
+  @include content-max-width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title {
+    text-align: center;
+    color: $white;
+    font-size: 30px;
+    font-family: $mainfont;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .line {
+    height: 3px;
+    width: 30px;
+    background-color: $white;
+    margin-bottom: 40px;
+  }
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+    input {
+      cursor: pointer;
+      color: $borderColor;
+      width: 100%;
+      max-width: 300px;
+      height: 30px;
+      padding: 3px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $borderColor;
+      &:focus,
+      &:hover {
+        border-color: $accentColor;
+      }
+    }
+  }
+  button {
+    outline: none;
+    font-size: 18px;
+    height: 35px;
+    width: 110px;
+    border: none;
+    background-color: transparent;
+    color: $white;
+    border-bottom: 1px solid $white;
+    cursor: pointer;
+    &:hover {
+      border-color: $accentColor;
+      color: $borderColor;
+    }
+  }
+}
+@media screen and (max-width: $mobile-landscape-breakpoint) {
+  .form {
+    div {
+      flex-direction: column;
+      align-items: center;
+      input {
+        max-width: 400px;
+        width: 100%;
+      }
+    }
+  }
+}

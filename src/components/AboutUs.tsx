@@ -19,12 +19,12 @@ const AboutUs = () => {
             tempora blanditiis adipisci enim facilis? Atque nam porro doloremque
             beatae nulla Lorem ipsum dolor sit amet consectetur adipisicing
             elit. Excepturi neque at, harum doloremque veritatis optio
-            repudiandae esse unde consequuntur explicabo?
+            repudiandae esse unde consequuntur explicabo.
           </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
             perferendis tempora sed Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Molestias, delectus?
+            adipisicing elit. Molestias, delectus.
           </p>
         </div>
         <div className={styles.yearsContainer}>
